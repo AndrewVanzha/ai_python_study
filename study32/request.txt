@@ -1,0 +1,28 @@
+/127.0.0.1:8000/
+http:/127.0.0.1:8000/
+
+/127.0.0.1:8000/users
+{
+"name": "str",
+"description": "desc",
+"price": 1.2
+}
+
+/127.0.0.1:8000/docs#/default/users
+utility
+
+
+/127.0.0.1:8000/get_answer?text=hi
+
+/127.0.0.1:8000/get_answer3?text=hi
+
+
+/127.0.0.1:8000/get_answer3?text=Как%20оформить%20страховку%20в%20Simble
+
+
+tests
+
+/127.0.0.1:8000
+/127.0.0.1:8000/users
+/127.0.0.1:8000/about
+
