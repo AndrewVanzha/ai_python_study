@@ -1,0 +1,56 @@
+Traceback (most recent call last):
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 412, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 84, in __call__
+    return await self.app(scope, receive, send)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\applications.py", line 271, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\applications.py", line 125, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\errors.py", line 184, in __call__
+    raise exc
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\exceptions.py", line 79, in __call__
+    raise exc
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\middleware\exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 21, in __call__
+    raise e
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 706, in __call__
+    await route.handle(scope, receive, send)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\routing.py", line 66, in app
+    response = await func(request)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 237, in app
+    raw_response = await run_endpoint_function(
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\fastapi\routing.py", line 165, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\starlette\concurrency.py", line 41, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func, *args)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 2144, in run_sync_in_worker_thread
+    return await future
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\anyio\_backends\_asyncio.py", line 851, in run
+    result = context.run(func, *args)
+  File "C:\Users\Andrew\HTML_CSS\Neuro\AIU\task12\Study3\fastapi_example3.py", line 51, in get_answer3
+    db = model3.make_index()
+  File "C:\Users\Andrew\HTML_CSS\Neuro\AIU\task12\Study3\chunks3.py", line 57, in make_index
+    db = FAISS.from_documents(self.source_chunks, embeddings)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\langchain\vectorstores\base.py", line 419, in from_documents
+    return cls.from_texts(texts, embedding, metadatas=metadatas, **kwargs)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\langchain\vectorstores\faiss.py", line 603, in from_texts
+    embeddings = embedding.embed_documents(texts)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\langchain\embeddings\openai.py", line 478, in embed_documents
+    return self._get_len_safe_embeddings(texts, engine=self.deployment)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\langchain\embeddings\openai.py", line 364, in _get_len_safe_embeddings
+    response = embed_with_retry(
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\langchain\embeddings\openai.py", line 100, in embed_with_retry
+    retry_decorator = _create_retry_decorator(embeddings)
+  File "C:\Users\Andrew\AppData\Local\Programs\Python\Python310\lib\site-packages\langchain\embeddings\openai.py", line 47, in _create_retry_decorator
+    retry_if_exception_type(openai.error.Timeout)
+AttributeError: module 'openai' has no attribute 'error'
